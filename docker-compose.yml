@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  tube-archivist-processor:
+    image: ghcr.io/peppy6582/tube-archivist-processor:latest # Use GitHub Container Registry (or build locally)
+    build:
+      context: .
+    container_name: tube_archivist_processor
+    environment:
+      VIDEO_DIRECTORY: "/TubeArchivist/YouTube/"
+      CHANNELS_DIRECTORY: "/TubeArchivist/YouTube Channels/"
+      PROCESSED_FILES_TRACKER: "processed_files.txt"
+      YOUTUBE_API_KEY: "your-youtube-api-key"
+      APPRISE_URL: "your-apprise-url"
+      CHANNELS_DVR_API_REFRESH_URL: "http://[YOUR CHANNELS DVR IP HERE]/dvr/scanner/scan"
+    volumes:
+      - ./YouTube:/TubeArchivist/YouTube
+      - ./YouTubeChannels:/TubeArchivist/YouTube Channels
+      - ./processed_files.txt:/app/processed_files.txt
+    restart: unless-stopped
