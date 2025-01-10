@@ -15,6 +15,6 @@ services:
       CHANNELS_DVR_API_REFRESH_URL: "http://[YOUR CHANNELS DVR IP HERE]/dvr/scanner/scan"
     volumes:
       - ./YouTube:/TubeArchivist/YouTube
-      - ./YouTubeChannels:/TubeArchivist/YouTube Channels
+      - ./YouTubeChannels:/TubeArchivist/YouTubeChannels
       - ./processed_files.txt:/app/processed_files.txt
     restart: unless-stopped
