@@ -8,7 +8,7 @@ services:
     container_name: tube_archivist_processor
     environment:
       VIDEO_DIRECTORY: "/TubeArchivist/YouTube/"
-      CHANNELS_DIRECTORY: "/TubeArchivist/YouTube Channels/"
+      CHANNELS_DIRECTORY: "/TubeArchivist/YouTubeChannels/"
       PROCESSED_FILES_TRACKER: "processed_files.txt"
       YOUTUBE_API_KEY: "your-youtube-api-key"
       APPRISE_URL: "your-apprise-url"
